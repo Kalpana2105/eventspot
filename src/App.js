@@ -1,7 +1,7 @@
 import React from 'react';
 //import Navbar from 'Navbar';
 //import EventListing from 'EventListing';
-import './index.css'; // Ensure this path is correct
+import './index.css';
 import EventListing from './Component/EventListing';
 import Navbar from './Component/Navbar';
 
