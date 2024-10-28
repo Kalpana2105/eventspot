@@ -44,20 +44,27 @@ const EventListing = () => {
 
   return (
     <div>
-      <h2>Upcoming Events</h2>
-      <input 
-        type="text" 
-        placeholder="Search by name or location..." 
-        value={searchQuery} 
-        onChange={handleSearchChange} 
-        style={{ marginBottom: '20px', padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }} 
-      />
+      <div className="search-container">
+        <input 
+          className="search-input"
+          type="text" 
+          placeholder="Search events by name or location..." 
+          value={searchQuery} 
+          onChange={handleSearchChange} 
+        />
+      </div>
       <div className="event-list">
         {filteredEvents.map((event) => (
           <div key={event.id} className="event-card" onClick={() => handleEventClick(event)}>
             <h3>{event.name}</h3>
-            <p>{event.date}</p>
-            <p>{event.location}</p>
+            <div className="event-info">
+              <i className="far fa-calendar"></i>
+              <span>{event.date}</span>
+            </div>
+            <div className="event-info">
+              <i className="fas fa-map-marker-alt"></i>
+              <span>{event.location}</span>
+            </div>
           </div>
         ))}
       </div>
